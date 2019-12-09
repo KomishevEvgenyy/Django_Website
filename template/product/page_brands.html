@@ -1,0 +1,15 @@
+{% extends 'product/base.html' %}
+{% block title %} {{product.name_categories}} {% endblock %}
+{% block content %}
+<ol>
+  {% if output_brand %}
+    {%for a in output_brand %}
+      <li>
+        <a href="{% url 'product:all_brand' %}">{{a.name_brand}}</a>
+      </li>
+    {% endfor %}
+  {% else %}
+    <p>Бренди не найдены</p>
+  {% endif %}
+</ol>
+{% endblock %}

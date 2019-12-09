@@ -1,0 +1,17 @@
+{% extends 'product/base.html' %}
+
+{% block title %} Категории товаров {% endblock %}
+
+{% block content %}
+<ol>
+  {% if output_categories %}
+    {%for a in output_categories %}
+      <li>
+        <a href="{% url 'product:all_brands' %}">{{a.name_categories}}</a>
+      </li>
+    {% endfor %}
+  {% else %}
+    <p>Категории не найдены</p>
+  {% endif %}
+</ol>
+{% endblock %}
