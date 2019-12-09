@@ -16,7 +16,7 @@ class Brand(models.Model):  # моделька для создания брен�
         return self.name_brand
 
 
-class ObjectForCategories(models.Model):  # моделька для создания товара
+class Goods(models.Model):  # моделька для создания товара
     add_categories = models.ForeignKey('Categories', on_delete=models.CASCADE)  # поле для выбора категории
     add_brand = models.ForeignKey('Brand', on_delete=models.CASCADE)  # поле для выбора бренда
     object_model = models.CharField(' Name model', max_length=256)  # поле для хранения имени модели товара
