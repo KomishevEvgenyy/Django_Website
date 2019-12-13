@@ -2,26 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a854e6ce-920b-4081-9b4d-412250e088e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/template/user/dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/user/logged_out.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/user/password_change_done.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/user/password_change_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/user/password_reset_complete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/user/password_reset_confirm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/user/password_reset_done.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/user/password_reset_email.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/user/password_reset_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/user/register_done.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstwebsite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstwebsite/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/product/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/user/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/user/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/user/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,10 +97,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1575995472792">
+    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1576255523052">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1575995472792" />
+    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1576255523052" />
     <state width="1328" height="220" key="GridCell.Tab.0.bottom" timestamp="1576240259227">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
