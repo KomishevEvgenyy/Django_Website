@@ -1,10 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import FormView
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth import login, logout
+from django.contrib.auth import login, logout, authenticate
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic.base import View
+from django.contrib.auth.decorators import login_required
 
+from .forms import UserRegistrationForm, LoginForm
 from .models import User
 
 
@@ -12,30 +14,40 @@ def index(request):
     return HttpResponse('views приложения user')
 
 
-class RegisterFormView(FormView):  # регистрация пользователя
-    form_class = UserCreationForm
-    # Ссылка, на которую будет перенаправляться пользователь в случае успешной регистрации.
-    # В данном случае указана ссылка на страницу входа для зарегистрированных пользователей.
-    success_url = "user/login/"
-    template_name = "register.html"  # Шаблон, который будет использоваться при отображении представления.
-
-    def form_valid(self, form):
-        form.save()  # Создаём пользователя, если данные в форму были введены корректно.
-        return super(RegisterFormView, self).form_valid(form)  # Вызываем метод базового класса form_valid
-
-
-class LoginFormView(FormView):  # авторизация пользователя
-    form_class = AuthenticationForm
-    template_name = "login.html"  # Аналогично регистрации, только используем шаблон аутентификации.
-    success_url = "/"  # В случае успеха перенаправим на главную.
-
-    def form_valid(self, form):
-        self.user = form.get_user()  # Получаем объект пользователя на основе введённых в форму данных.
-        login(self.request, self.user)  # Выполняем аутентификацию пользователя.
-        return super(LoginFormView, self).form_valid(form)
+def user_login(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)  # создаем екземпляр формы с отправленными данными
+        if form.is_valid():  # проверка валидности формы
+            cd = form.cleaned_data
+            user = authenticate(username=cd['username'], password=cd['password'])  # ищем пользователя в базе данных
+            if user is not None:
+                if user.is_active:  # если прошел аутентификацию то проверяем активен он или нет
+                    login(request, user)
+                    return HttpResponse('Authenticated successfully')  # сообщение о проходжении аутентификацию
+                else:
+                    return HttpResponse('Disabled account')  # аккаунт не активный
+            else:
+                return HttpResponse('Invalid login')  # неверный логин
+    else:
+        form = LoginForm()
+    return render(request, 'user/login.html', {'form': form})
 
 
-class LogoutView(View):  # выход из учетной записи
-    def get(self, request):
-        logout(request)  # Выполняем выход для пользователя, запросившего данное представление.
-        return HttpResponseRedirect("/")  # После чего, перенаправляем пользователя на главную страницу.
+def register(request):
+    if request.method == 'POST':
+        user_form = UserRegistrationForm(request.POST)
+        if user_form.is_valid():
+            new_user = user_form.save(commit=False)  # Создания нового пользователя без сохранения
+            new_user.set_password(user_form.cleaned_data['password'])  # установка пароля
+            new_user.save()  # Сохранения пользователя
+            return render(request, 'user/register_done.html', {'new_user': new_user})  # переход на страницу после
+            # успешной регистрации
+    else:
+        user_form = UserRegistrationForm()
+    return render(request, 'user/register.html', {'user_form': user_form})  # переход на страницу регистрации
+
+
+@login_required  # пароверка прохода аутентификации. Если прошел представление выполниться, если нет перенаправит на
+# страницу входа
+def dashboard(request):
+    return render(request, 'account/dashboard.html', {'section': 'dashboard'})

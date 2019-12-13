@@ -1,12 +1,18 @@
-{% extends 'product/base.html' %}
+{% extends "product/base.html" %}
 
-{% block title %} Регистрация {% endblock %}
+{% block title %}Create an account{% endblock %}
 
 {% block content %}
-    <form action="" method="post">
-      {% csrf_token %}
-      <!-- as_p для того, чтобы каждый элемент формы был с новой строки -->
-      {{ form.as_p }}
-      <button type="submit">Зарегистрироваться</button>
+
+<ol>
+    <h1> Создание аккаунта </h1>
+    <p> Пожалуйста, зарегистрируйтесь, используя следующую форму: </p>
+    <li>
+        <form action="." method="post"> {% csrf_token %}
+        {{ user_form.as_p }}
+        <p><input type="submit" value="Create my account"></p>
     </form>
+    </li>
+</ol>
+
 {% endblock %}
