@@ -123,8 +123,8 @@ STATIC_URL = '/static/'
 #STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = '/media/'  # базовый URL-адрес для обслуживания файлов мультимедиа, отправляемых пользователями
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')  # локальный путь, в котором они находятся
 
 LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 LOGIN_URL = reverse_lazy('login')

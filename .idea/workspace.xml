@@ -4,7 +4,11 @@
     <list default="true" id="a854e6ce-920b-4081-9b4d-412250e088e6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstwebsite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstwebsite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstwebsite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstwebsite/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/product/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
