@@ -5,11 +5,11 @@
   {% if output_brand %}
     {%for a in output_brand %}
       <li>
-        <a href="#">{{a.name_brand}}</a>
+        <a href="#">{{a.name}}</a>
       </li>
     {% endfor %}
   {% else %}
-    <p>Категории не найдены</p>
+    <p>Бренды не найдены</p>
   {% endif %}
 </ol>
 {% endblock %}

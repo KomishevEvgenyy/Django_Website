@@ -17,11 +17,13 @@ class User(models.Model):
 class Profile(models.Model):
     # расширение для модели User добавление дополнительных данных
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    # AUTH_USER_MODEL нет в settings.py узнать как её подключать??
     date_of_birth = models.DateField(blank=True, null=True)
     photo = models.ImageField(upload_to='users/%Y/%m/%d', blank=True)
 
     def __str__(self):
         return 'Profile for user {}'.format(self.user.username)
+    # username не виден так как не подключен к User Django через AUTH_USER_MODEL
 
 
 

@@ -10,13 +10,17 @@ def index(request):
 
 
 def all_categories(request):
-    output_categories = Categories.objects.order_by('name_categories')
+    output_categories = Categories.objects.order_by('name')
     return render(request, 'product/page_categories.html', {'output_categories': output_categories})
+
+
+def category(request):
+    pass
 
 
 def all_brands(request):
     # return HttpResponse('страница с брендами')
-    output_brand = Brand.objects.order_by("name_brand")
+    output_brand = Brand.objects.order_by("name")
     return render(request, 'product/page_brands.html', {'output_brand': output_brand})
 
 # def detail(request, brand_id):

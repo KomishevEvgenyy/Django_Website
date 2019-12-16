@@ -1,6 +1,6 @@
-{% extends "product/base.html" %}
+{% extends "user/base.html" %}
 
-{% block title %}Create an account{% endblock %}
+{% block title %}Создание аккаунта{% endblock %}
 
 {% block content %}
 
@@ -8,9 +8,10 @@
     <h1> Создание аккаунта </h1>
     <p> Пожалуйста, зарегистрируйтесь, используя следующую форму: </p>
     <li>
-        <form action="." method="post"> {% csrf_token %}
+        <form action="." method="post">
         {{ user_form.as_p }}
-        <p><input type="submit" value="Create my account"></p>
+        {% csrf_token %}
+        <p><input type="submit" value="Создать аккаунт"></p>
     </form>
     </li>
 </ol>

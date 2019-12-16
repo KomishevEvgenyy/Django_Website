@@ -1,36 +1,49 @@
 from django.contrib import admin
-from django.contrib.auth import login, logout
-from django.contrib.auth.views import logout_then_login
+from django.contrib.auth import logout
+from django.contrib.auth.views import logout_then_login, LoginView, LogoutView, PasswordResetView, \
+    PasswordResetConfirmView, PasswordResetCompleteView, PasswordResetDoneView, PasswordChangeView, \
+    PasswordChangeDoneView
 from django.contrib.auth.password_validation import password_changed
 from django.urls import path
-from django.conf.urls import url
 
 from . import views
-from .views import register, user_login, dashboard
+from .views import register, user_login, dashboard, edit, images, people
 
 app_name = 'user'
 urlpatterns = [
-    path('', views.index, name="index"),
-    url(r'^register/$', register, name='register'),
-    # url(r'^login/$', user_login, name='login'),
+    # path('', views.index, name="index"),
+    path('', dashboard, name='dashboard'),
+    # переход после аутентификации
+    path('register/', register, name='register'),
+    # регистрация пользователя
 
-    url(r'^login/$', login, name='login'),  # вход пользователя
-    url(r'^logout/$', logout, name='logout'),  # вызод пользователя
-    url(r'^logout-then-login/$', logout_then_login, name='logout_then_login'),
+    path('login/', LoginView.as_view(redirect_field_name='all_categories.html'), name='login'),
+    # вход пользователя
+    path('logout/', LogoutView.as_view(), name='logout'),
+    # выход пользователя
+    path('logout-then-login/', logout_then_login, name='logout_then_login'),
     # выход пользователя и перенаправление его на страницу входа
-    url(r'^$', dashboard, name='dashboard'),  # переход после аутентификации
+    path('edit/', edit, name='edit'),
+    # изминение аккаунта
 
-    # url(r'^password-change/$', password_changed, name='password_change'),  # отображает
-    # форму для изминения пароля
-    # url(r'^password-change/done/$', 'django.contrib.auth.views.password_change_done', name='password_change_done'),
+    path('password-change/form', PasswordChangeView.as_view(success_url='password_change_done'),
+         name='password_change_form'),  # не переходит на страницу password_change_done????
+    # отображает форму для изминения пароля
+    path('password-change/done/', PasswordChangeDoneView.as_view(), name='password_change_done'),
     # страница после успешного изминения пароля
 
-    # url(r'^password-reset/$', 'django.contrib.auth.views.password_reset', name='password_reset'),  # сброс пароля
-    # url(r'^password-reset/done/$', 'django.contrib.auth.views.password_reset_done', name='password_reset_done'),
+    path('password-reset/', PasswordResetView.as_view(), name='password_reset'),
+    # сброс пароля
+    path('password-reset/done/', PasswordResetDoneView.as_view(), name='password_reset_done'),
     # сообщение о сбросе пароля и отправка его на email
-    # url(r'^password-reset/confirm/(?P<uidb64>[-\w]+)/(?P<token>[-\w]+)/$', 'django.contrib.auth.views'
-    #     '.password_reset_confirm',
-    #     name='password_reset_confirm'),  # установка пароля
-    # url(r'^password-reset/complete/$', 'django.contrib.auth.views.password_reset_complete',
-    #     name='password_reset_complete'),  # успешный сброс пароля
+    path('password-reset/confirm/(?P<uidb64>[0-9A-Za-z]+)/(?P<token>[0-9A-Za-z)/',
+         PasswordResetConfirmView.as_view(),
+         name='password_reset_confirm'),
+    # Ввод нового пароля при его востановлении
+    path('password-reset/complete/', PasswordResetCompleteView.as_view(),
+         name='password_reset_complete'),
+    # успешный сброс пароля
+
+    path('images/', images, name='images'),
+    path('people/', people, name='people'),
 ]
