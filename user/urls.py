@@ -2,9 +2,9 @@ from django.contrib import admin
 from django.contrib.auth import logout
 from django.contrib.auth.views import logout_then_login, LoginView, LogoutView, PasswordResetView, \
     PasswordResetConfirmView, PasswordResetCompleteView, PasswordResetDoneView, PasswordChangeView, \
-    PasswordChangeDoneView
+    PasswordChangeDoneView, PasswordChangeForm
 from django.contrib.auth.password_validation import password_changed
-from django.urls import path
+from django.urls import path, reverse_lazy
 
 from . import views
 from .views import register, user_login, dashboard, edit, images, people
@@ -17,7 +17,7 @@ urlpatterns = [
     path('register/', register, name='register'),
     # регистрация пользователя
 
-    path('login/', LoginView.as_view(redirect_field_name='all_categories.html'), name='login'),
+    path('login/', LoginView.as_view(), name='login'),
     # вход пользователя
     path('logout/', LogoutView.as_view(), name='logout'),
     # выход пользователя
@@ -26,13 +26,15 @@ urlpatterns = [
     path('edit/', edit, name='edit'),
     # изминение аккаунта
 
-    path('password-change/form', PasswordChangeView.as_view(success_url='password_change_done'),
+    path('password-change/form/', PasswordChangeView.as_view(success_url=reverse_lazy('user:password_change_done')),
          name='password_change_form'),  # не переходит на страницу password_change_done????
     # отображает форму для изминения пароля
     path('password-change/done/', PasswordChangeDoneView.as_view(), name='password_change_done'),
     # страница после успешного изминения пароля
 
-    path('password-reset/', PasswordResetView.as_view(), name='password_reset'),
+    path('password-reset/', PasswordResetView.as_view(template_name='registration/password_reset.html',
+                                                      email_template_name='registration/password_reset_email.html'),
+         name='password_reset'),
     # сброс пароля
     path('password-reset/done/', PasswordResetDoneView.as_view(), name='password_reset_done'),
     # сообщение о сбросе пароля и отправка его на email
@@ -40,8 +42,7 @@ urlpatterns = [
          PasswordResetConfirmView.as_view(),
          name='password_reset_confirm'),
     # Ввод нового пароля при его востановлении
-    path('password-reset/complete/', PasswordResetCompleteView.as_view(),
-         name='password_reset_complete'),
+    path('password-reset/complete/', PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     # успешный сброс пароля
 
     path('images/', images, name='images'),

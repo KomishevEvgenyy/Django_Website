@@ -25,7 +25,7 @@ class Goods(models.Model):  # моделька для создания това�
     picture = models.ImageField(upload_to='')  # поле для хранения картинки
 
     def __str__(self):
-        return f'{self.model}: {self.brand}'  # как вернуть название бренд в модельку обьектов
+        return f'{self.categories}: {self.brand}: {self.model}: {self.picture}'
 
 
 

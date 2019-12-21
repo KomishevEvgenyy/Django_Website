@@ -2,35 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a854e6ce-920b-4081-9b4d-412250e088e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/template/user/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/user/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/user/edit_done.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/user/images.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/user/people.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstwebsite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstwebsite/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstwebsite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstwebsite/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/product/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/product/page_brands.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/page_brands.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/product/page_categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/page_categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/user/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/user/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/user/logged_out.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/registration/logged_out.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/user/password_change_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/registration/password_change_done.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/user/password_change_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/registration/password_change_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/user/password_reset_complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/registration/password_reset_complete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/user/password_reset_confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/registration/password_reset_confirm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/user/password_reset_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/registration/password_reset_done.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/user/password_reset_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/registration/password_reset_email.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/user/password_reset_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/registration/password_reset_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/user/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/user/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/user/register_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/user/register_done.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/product/page_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/page_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/registration/password_reset_complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/registration/password_reset_complete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +53,28 @@
       <recent name="D:\Project_or_Python\firstwebsite" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.tests">
+    <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="firstwebsite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/product" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/product/tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="firstwebsite" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,6 +98,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.tests" />
         <item itemvalue="Python.views" />
       </list>
     </recent_temporary>
@@ -125,26 +129,26 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1576255523052">
+    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1576600763129">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1576255523052" />
-    <state width="1328" height="220" key="GridCell.Tab.0.bottom" timestamp="1576240259227">
+    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1576600763129" />
+    <state width="1328" height="219" key="GridCell.Tab.0.bottom" timestamp="1576785161897">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1328" height="220" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1576240259227" />
-    <state width="1328" height="220" key="GridCell.Tab.0.center" timestamp="1576240259226">
+    <state width="1328" height="219" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1576785161897" />
+    <state width="1328" height="219" key="GridCell.Tab.0.center" timestamp="1576785161896">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1328" height="220" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1576240259226" />
-    <state width="1328" height="220" key="GridCell.Tab.0.left" timestamp="1576240259226">
+    <state width="1328" height="219" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1576785161896" />
+    <state width="1328" height="219" key="GridCell.Tab.0.left" timestamp="1576785161896">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1328" height="220" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1576240259226" />
-    <state width="1328" height="220" key="GridCell.Tab.0.right" timestamp="1576240259227">
+    <state width="1328" height="219" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1576785161896" />
+    <state width="1328" height="219" key="GridCell.Tab.0.right" timestamp="1576785161897">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1328" height="220" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1576240259227" />
+    <state width="1328" height="219" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1576785161897" />
     <state x="263" y="105" key="IDE.errors.dialog" timestamp="1576276601079">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

@@ -3,5 +3,15 @@
 {% block title %} Товары {% endblock %}
 
 {% block content %}
-
+    <ol>
+      {% if output_goods %}
+        {%for a in output_goods %}
+          <li>
+            <a href="{% url 'product:all_goods' %}">{{a}}</a>
+          </li>
+        {% endfor %}
+      {% else %}
+        <p>Товары не найдены</p>
+      {% endif %}
+    </ol>
 {% endblock %}

@@ -128,11 +128,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'  # базовый URL-адрес для обслуживания файлов мультимедиа, отправляемых пользователями
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')  # локальный путь, в котором они находятся
 
-LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
+LOGIN_REDIRECT_URL = reverse_lazy('user:dashboard')
 # указывает на какой URL-адрес перенаправлять пользователя после входа в систему.
-LOGIN_URL = reverse_lazy('login')
+LOGIN_URL = reverse_lazy('user:login')
 # URL-адрес для перенаправления пользователя на вход
-LOGOUT_URL = reverse_lazy('logout')
+LOGOUT_URL = reverse_lazy('user:logout')
 # URL-адрес для перенаправления пользователя на выход
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # отправка email сообщений пользователю

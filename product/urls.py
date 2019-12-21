@@ -1,13 +1,11 @@
 from django.contrib import admin
 from django.urls import path
 
-from . import views
+from .views import all_brands, all_goods
 
 app_name = 'product'
 urlpatterns = [
-    path('', views.index, name="index"),
 
-    #path('category/<int:id>/', views.categories, name='category'),
-    path('all_brands/', views.all_brands, name='all_brands'),  # url который выводит все бренды в категории
-    #path('<int:brand_id>/', views.detail, name='name'),
+    path('all_brands/<int:num>', all_brands, name='all_brands'),  # url который выводит все бренды в категории
+    path('goods/<int:num>', all_goods, name='goods'),
 ]
