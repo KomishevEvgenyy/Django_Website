@@ -7,7 +7,7 @@
   {% if output_categories %}
     {%for a in output_categories %}
       <li>
-        <a href="{% url 'product:all_brands/1' %}">{{a.name}}</a>
+        <a href="{% url 'product:all_brands' %}">{{a.name}}</a>
       </li>
     {% endfor %}
   {% else %}

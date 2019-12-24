@@ -1,12 +1,8 @@
-from django.contrib import admin
-from django.contrib.auth import logout
 from django.contrib.auth.views import logout_then_login, LoginView, LogoutView, PasswordResetView, \
     PasswordResetConfirmView, PasswordResetCompleteView, PasswordResetDoneView, PasswordChangeView, \
     PasswordChangeDoneView, PasswordChangeForm
-from django.contrib.auth.password_validation import password_changed
 from django.urls import path, reverse_lazy
 
-from . import views
 from .views import register, user_login, dashboard, edit, images, people
 
 app_name = 'user'
@@ -32,14 +28,13 @@ urlpatterns = [
     path('password-change/done/', PasswordChangeDoneView.as_view(), name='password_change_done'),
     # страница после успешного изминения пароля
 
-    path('password-reset/', PasswordResetView.as_view(template_name='registration/password_reset.html',
-                                                      email_template_name='registration/password_reset_email.html'),
+    path('password-reset/form/', PasswordResetView.as_view(success_url=reverse_lazy('user:password_reset_done')),
          name='password_reset'),
     # сброс пароля
     path('password-reset/done/', PasswordResetDoneView.as_view(), name='password_reset_done'),
     # сообщение о сбросе пароля и отправка его на email
-    path('password-reset/confirm/(?P<uidb64>[0-9A-Za-z]+)/(?P<token>[0-9A-Za-z)/',
-         PasswordResetConfirmView.as_view(),
+    path('password-reset/confirm/(<uidb64>[-/w]+)/(<token>[-/w]+)/',
+         PasswordResetConfirmView.as_view(success_url=reverse_lazy('user:password_reset_complete')),
          name='password_reset_confirm'),
     # Ввод нового пароля при его востановлении
     path('password-reset/complete/', PasswordResetCompleteView.as_view(), name='password_reset_complete'),
