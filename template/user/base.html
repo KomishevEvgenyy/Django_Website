@@ -19,8 +19,8 @@
             <li class="{% if request.resolver_match.url_name == 'people' %}active{% endif %}">
                 <a href="{% url 'user:people' %}">People</a>
             </li>
-            <li class="{% if request.resolver_match.url_name == 'page_categories' %}active{% endif %}">
-                <a href="{% url 'all_categories' %}">На главную</a>
+            <li class="{% if request.resolver_match.url_name == 'product_list' %}active{% endif %}">
+                <a href="{% url 'product:product_list' %}">На главную</a>
             </li>
         </ul>
     {% endif %}

@@ -2,7 +2,9 @@
 {% load static %}
 <html>
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8"/>
+    <title>{% block title %}My shop{% endblock %}</title>
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
 
 </head>
 <body>
@@ -30,6 +32,11 @@
             <a href="{% url 'user:login' %}">Log-in</a>
         {% endif %}
     </span>
+    </div>
+     <div id="subheader">
+        <div class="cart">
+            Your cart is empty.
+         </div>
     </div>
     <div id="content">
         {% block content %}

@@ -1,24 +1,29 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404, HttpResponseRedirect
-from django.shortcuts import render
 
 from .models import Categories, Brand, Goods
 
 
-def all_categories(request):
-    output_categories = Categories.objects.order_by('id')
-    return render(request, 'product/page_categories.html', {'output_categories': output_categories})
+def product_list(request, category_slug=None):
+    category = None
+    categories = Categories.objects.all()
+    products = Goods.objects.filter(available=True)
+    if category_slug:
+        category = get_object_or_404(Categories, slug=category_slug)
+        products = products.filter(category=category)
+    return render(request,
+                  'product/list.html',
+                  {'category': category,
+                   'categories': categories,
+
+                   'products': products})
 
 
-def all_brands(request, num=1):
-    # return HttpResponse('страница с брендами')
-    output_brand = Brand.objects.order_by("id")
-    return render(request, 'product/page_brands.html', {'output_brand': output_brand})
-
-
-def all_goods(request, brand_id):
-    output_goods = Brand.objects.all()
-    return render(request, 'product/page_brands.html', {'output_goods': output_goods})
-
-
-
+def product_detail(request, id, slug):
+    product = get_object_or_404(Goods,
+                                id=id,
+                                slug=slug,
+                                available=True)
+    return render(request,
+                  'product/detail.html',
+                  {'product': product})

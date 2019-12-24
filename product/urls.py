@@ -1,11 +1,12 @@
 from django.contrib import admin
 from django.urls import path
 
-from .views import all_brands, all_goods
+from .views import product_list, product_detail
 
 app_name = 'product'
 urlpatterns = [
+    path('', product_list, name='product_list'),
+    path('(<category_slug>[-/w]+)/', product_list, name='product_list_by_category'),
+    path('(<id>/d+)/(<slug>[-/w]+)/', product_detail, name='product_detail'),
 
-    path('all_brands/<int:num>', all_brands, name='all_brands'),  # url который выводит все бренды в категории
-    path('goods/<int:num>', all_goods, name='goods'),
 ]
