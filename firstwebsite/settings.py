@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'f%1ta1ja@u9a4%qn@&v=*sueupii5oq0o+jzh-=-q0(kp)8@7d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'product',
     'user',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -136,4 +137,6 @@ LOGOUT_URL = reverse_lazy('user:logout')
 # URL-адрес для перенаправления пользователя на выход
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # отправка email сообщений пользователю
+
+CART_SESSION_ID = 'cart'
 

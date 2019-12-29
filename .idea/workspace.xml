@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a854e6ce-920b-4081-9b4d-412250e088e6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cart/cart.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/cart/detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firstwebsite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstwebsite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstwebsite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstwebsite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/product/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/product/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/product/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/product/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/user/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/user/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +55,7 @@
       <recent name="D:\Project_or_Python\firstwebsite" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.tests">
+  <component name="RunManager" selected="Python.turtule">
     <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="firstwebsite" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -58,6 +69,48 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/product/tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="turtle" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="firstwebsite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="D:/Python/project/Класная работа/15.10" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="D:/Python/project/Класная работа/15.10/turtle.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="turtule" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="firstwebsite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="D:/Python/turtule" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="D:/Python/turtule/turtule.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -89,6 +142,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.turtule" />
+        <item itemvalue="Python.turtle" />
         <item itemvalue="Python.tests" />
         <item itemvalue="Python.views" />
       </list>
@@ -120,26 +175,30 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1577298417245">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="363" y="104" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.738@0.0.1366.738" timestamp="1577298417245" />
     <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1576600763129">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1576600763129" />
-    <state width="1328" height="219" key="GridCell.Tab.0.bottom" timestamp="1576785161897">
+    <state width="1328" height="161" key="GridCell.Tab.0.bottom" timestamp="1577303959756">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1328" height="219" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1576785161897" />
-    <state width="1328" height="219" key="GridCell.Tab.0.center" timestamp="1576785161896">
+    <state width="1328" height="161" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1577303959756" />
+    <state width="1328" height="161" key="GridCell.Tab.0.center" timestamp="1577303959755">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1328" height="219" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1576785161896" />
-    <state width="1328" height="219" key="GridCell.Tab.0.left" timestamp="1576785161896">
+    <state width="1328" height="161" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1577303959755" />
+    <state width="1328" height="161" key="GridCell.Tab.0.left" timestamp="1577303959755">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1328" height="219" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1576785161896" />
-    <state width="1328" height="219" key="GridCell.Tab.0.right" timestamp="1576785161897">
+    <state width="1328" height="161" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1577303959755" />
+    <state width="1328" height="161" key="GridCell.Tab.0.right" timestamp="1577303959755">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1328" height="219" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1576785161897" />
+    <state width="1328" height="161" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1577303959755" />
     <state x="263" y="105" key="IDE.errors.dialog" timestamp="1576276601079">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -148,9 +207,13 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1576240455979" />
-    <state x="367" y="0" width="606" height="738" key="find.popup" timestamp="1576408957532">
+    <state x="316" y="45" width="606" height="693" key="find.popup" timestamp="1577301834183">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="367" y="0" width="606" height="738" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1576408957532" />
+    <state x="316" y="45" width="606" height="693" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1577301834183" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1577556216681">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1577556216681" />
   </component>
 </project>

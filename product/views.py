@@ -3,6 +3,8 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect
 
 from .models import Categories, Brand, Goods
 
+from cart.forms import CartAddProductForm
+
 
 def product_list(request, category_slug=None):
     category = None
@@ -24,6 +26,8 @@ def product_detail(request, id, slug):
                                 id=id,
                                 slug=slug,
                                 available=True)
+    cart_product_form = CartAddProductForm()
+    #  добавление кновки "Добавить в корзину"
     return render(request,
                   'product/detail.html',
-                  {'product': product})
+                  {'product': product, 'cart_product_form': cart_product_form})

@@ -44,7 +44,7 @@ class Goods(models.Model):  # моделька для создания това�
     stock = models.PositiveIntegerField()  # для хранения остатков продукта
     available = models.BooleanField(default=True)  # показывает в наличии продукт или нет.
     # Можно включать или отключать продукт в каталоге.
-    picture = models.ImageField(upload_to='products/%Y/%m/%d')  # поле для хранения картинки
+    image = models.ImageField(upload_to='products/%Y/%m/%d')  # поле для хранения картинки
     created = models.DateTimeField(auto_now_add=True)  # будет хранить дату когда создан обьект
     updated = models.DateTimeField(auto_now=True)  # время последнего обновления товара
 
