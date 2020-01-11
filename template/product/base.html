@@ -22,6 +22,9 @@
             <li class="{% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}">
                 <a href="{% url 'user:dashboard' %}">Мой кабинет</a>
             </li>
+            <li class="{% if request.resolver_match.url_name == 'product_list' %}active{% endif %}">
+                <a href="{% url 'product:product_list' %}">На главную</a>
+            </li>
            <!-- <li class="{% if request.resolver_match.url_name == 'images' %}active{% endif %}">
                 <a href="{% url 'user:images' %}">Images</a>
             </li>
@@ -33,17 +36,24 @@
     {% endif %}
     <span class="user">
         {% if request.user.is_authenticated %}
-            Hello {{ request.user.username }},
-            <a href="{% url 'user:logout' %}">Logout</a>
+            Привет {{ request.user.username }},
+            <a href="{% url 'user:logout' %}">Выйти из аккаунта</a>
         {% else %}
-            <a href="{% url 'user:login' %}">Log-in</a>
+            <a href="{% url 'user:login' %}">Вход в аккаунт</a>
         {% endif %}
     </span>
     </div>
      <div id="subheader">
         <div class="cart">
-            Ваша корзина пуста.
-         </div>
+            {% with total_items=cart|length %}
+            {% if cart|length > 0 %}
+                В вашей корзине:
+                <a href="{% url 'cart:cart_detail' %}"> {{ total_items }} товаров </a>
+                {{ total_item|pluralize }}, на сумму ${{ cart.get_total_price }}
+            {% else %}
+            Корзина пустая.
+            {% endif %}
+            {% endwith %}
     </div>
     <div id="content">
         {% block content %}

@@ -5,21 +5,21 @@
 {% endblock %}
 {% block content %}
     <h1>Ваша корзина</h1>
-    <table class="cart">
+    <table class="cart" cellpadding="13">
         <thead>
-        <tr>
-            <th>Image</th>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Remove</th>
-            <th>Unit price</th>
-            <th>Price</th>
+        <tr align="center">
+            <th>Фото</th>
+            <th>Товар</th>
+            <th>Количество<br/>товара</th>
+            <th>Удаление<br/>товара</th>
+            <th>Цена за единицу<br/>товара</th>
+            <th>Цена</th>
         </tr>
         </thead>
         <tbody>
         {% for item in cart %}
             {% with product=item.product %}
-                <tr>
+                <tr align="center">
                     <td>
                         <a href="{{ product.get_absolute_url }}">
                             <img src="
@@ -27,10 +27,10 @@
                                     {{ product.image.url }}
                                 {% else %}
                                     {% static 'img/no_image.png' %}
-                                {% endif %}">
+                                {% endif %}" width="200px">
                         </a>
                     </td>
-                    <td>{{ product.name }}</td>
+                    <td>{{ product.brand }} {{ product.name }}</td>
                     <td>{{ item.quantity }}</td>
                     <td><a href="{% url 'cart:cart_remove' product.id%}">Удалить</a></td>
                     <td class="num">${{ item.price }}</td>
@@ -38,15 +38,15 @@
                 </tr>
             {% endwith %}
         {% endfor %}
-        <tr class="total">
+        <tr class="total" align="center">
             <td>Общее количество</td>
             <td colspan="4"></td>
             <td class="num">${{ cart.get_total_price }}</td>
         </tr>
         </tbody>
-    </table>
-    <p class="text-right">
-        <a href="{% url 'product:product_list' %}" class="button light">Продолжить покупки</a>
+    </table><br/>
+    <p class="text-left">
+        <a href="{% url 'product:product_list' %}" class="button light">Продолжить покупки</a><br/>
         <a href="#" class="button">Checkout</a>
     </p>
 {% endblock %}

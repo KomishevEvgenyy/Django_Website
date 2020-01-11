@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_POST
 
-import product
 from product.models import Goods
 from .cart import Cart
 from .forms import CartAddProductForm
@@ -9,20 +8,30 @@ from .forms import CartAddProductForm
 
 @require_POST
 def cart_add(request, product_id):
-    #  добавляет товары в корзину или обновляет количество для существующих товаров
+    """
+        Представление для добавления товаров в корзину или обновляет количества для существующих товаров
+
+        Декоратор require_POST используется чтобы разрешить только POST запросы поскольку это представление изменит
+        данные.
+        В качестве параметра представление получает ID товара. После извлечения екземпляра продукта с заданным ID
+        проверяем с помощью формы CartAddProductForm. Если форма валидна то добавляем или обновляем товар в корзине.
+    """
+
     cart = Cart(request)
-    product_id = get_object_or_404(Goods, id=product_id)
+    product = get_object_or_404(Goods, id=product_id)
     form = CartAddProductForm(request.POST)
     if form.is_valid():
         #  если форма валидна то мы или добавляем или обновляем товары в корзине
         cd = form.cleaned_data
-        cart.add(product=product, quantity=cd['quantity'], update_quantity=cd['update'])
+        cart.add(goods=product, quantity=cd['quantity'], update_quantity=cd['update'])
     return redirect('cart:cart_detail')
     #  url cart_detail это наша корзина где будет отображаться товар.
 
 
 def cart_remove(request, product_id):
-    #  удаление товаров из корзины. Получает id продукта в качестве параметра
+    """
+        Предствление для удаление товаров из корзины. Получает id продукта в качестве параметра
+    """
     cart = Cart(request)
     product = get_object_or_404(Goods, id=product_id)
     #  извлекаем екземпляр продукта с заданным id
@@ -32,7 +41,9 @@ def cart_remove(request, product_id):
 
 
 def cart_detail(request):
-    #  отображение корзины и её товаров. Показывает текущее состояние корзины.
+    """
+       Представление для отображение корзины и её товаров. Показывает текущее состояние корзины.
+    """
     cart = Cart(request)
     return render(request, 'cart/detail.html', {'cart': cart})
 

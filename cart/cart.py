@@ -24,19 +24,19 @@ class Cart(object):
             cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
 
-    def add(self, product, quantity=1, update_quantity=False):
+    def add(self, goods, quantity=1, update_quantity=False):
         """
             Добавление продукта в корзину или обновления его количества
 
-            :param product: екземпляр Goods для добавления или обновления в корзине
-            :param quantity: число для количетсва продуктов. По умолчанию = 1
-            :param update_quantity: логическое значение, которое указывает, требуется ли обновление количества с заданным
+            product: екземпляр Goods для добавления или обновления в корзине
+            quantity: число для количетсва продуктов. По умолчанию = 1
+            update_quantity: логическое значение, которое указывает, требуется ли обновление количества с заданным
             количеством (True), или же новое количество должно быть добавлено к существующему количеству (False)
-         :return:
+
         """
-        product_id = str(product.id)
+        product_id = str(goods.id)
         if product_id not in self.cart:
-            self.cart[product_id] = {'quantity': 0, 'price': str(product.price)}
+            self.cart[product_id] = {'quantity': 0, 'price': str(goods.price)}
             #  преобразование цены продукта из десятичного разделителя в строку, чтобы сериализовать его
         if update_quantity:
             self.cart[product_id]['quantity'] = quantity
@@ -52,11 +52,11 @@ class Cart(object):
         self.session.modified = True
         #  после сохранения всех изменений в корзине помечает сесию как modefied
 
-    def remove(self, product):
+    def remove(self, goods):
         """
             Удаление товаров из корзины
         """
-        product_id = str(product.id)
+        product_id = str(goods.id)
         if product_id in self.cart:
             del self.cart[product_id]
             self.save()
@@ -71,7 +71,7 @@ class Cart(object):
         """
         product_ids = self.cart.keys()
         #  получение обьектов goods и добавление их в корзину
-        products = Goods.objects.fillter(id__in=product_ids)
+        products = Goods.objects.filter(id__in=product_ids)
         for product in products:
             self.cart[str(product.id)]['product'] = product
 
@@ -84,13 +84,13 @@ class Cart(object):
         """
             Подсчет всех товаров в корзине.
         """
-        return sum(item['quantity'] for item in set.cart.values())
+        return sum(item['quantity'] for item in self.cart.values())
 
     def get_total_price(self):
         """
         Метод который подсчитывает общую стоимость товаров в корзине
         """
-        return sum(Decimal(item['price']*item['quantity'] for item in self.cart.values()))
+        return sum(Decimal(item['price'])*item['quantity'] for item in self.cart.values())
 
     def clear(self):
         """

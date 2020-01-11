@@ -27,7 +27,7 @@ def product_detail(request, id, slug):
                                 slug=slug,
                                 available=True)
     cart_product_form = CartAddProductForm()
-    #  добавление кновки "Добавить в корзину"
+    #  добавление кнопки "Добавить в корзину"
     return render(request,
                   'product/detail.html',
                   {'product': product, 'cart_product_form': cart_product_form})

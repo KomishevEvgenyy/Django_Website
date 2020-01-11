@@ -1,8 +1,8 @@
-{% extends "user/base.html" %}
+{% extends "product/base.html" %}
 
 {% block title %}Панель приборов{% endblock %}
 
 {% block content %}
-    <h1>Dashboard</h1>
+    <h1>Мой кабинет</h1>
     <p>Добро пожаловать на вашу панель инструментов. Вы можете <a href="{% url 'user:edit' %}">редактировать профиль</a> или <a href="{% url 'user:password_change_form' %}">изменить свой пароль</a>.</p>
 {% endblock %}

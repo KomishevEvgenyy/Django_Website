@@ -1,10 +1,10 @@
-{% extends "user/base.html" %}
+{% extends "product/base.html" %}
 
-{% block title %}Изменения аккаунта{% endblock %}
+{% block title %}Изменения профиля{% endblock %}
 
 {% block content %}
-    <h1>Измените свой аккаунт</h1>
-    <p>Редактируйте свой аккаунт, используя следующую форму:</p>
+    <h1>Измените свой профиль</h1>
+    <p>Редактируйте свой профиль, используя следующую форму:</p>
     <form action="." method="post" enctype="multipart/form-data">
         {{ user_form.as_p }}
         {{ profile_form.as_p }}
